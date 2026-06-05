@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #5E4BFA;
+  --primary-dark: #4b3bd2;
+  --bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --text: #333;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  direction: rtl;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+header p {
+  margin-top: 12px;
+  font-size: 1.4em;
+  opacity: 0.9;
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+h2 {
+  color: var(--primary);
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+section p {
+  font-size: 1.1em;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+/* ===== Gallery (Apps) ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+/* ===== Web & Clothes ===== */
+.clothes-gallery,
+.web-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* ===== Images ===== */
+.gallery img,
+.clothes-gallery img,
+.web-gallery img {
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Aspect ratio for mobile app screenshots */
+.gallery img {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+.gallery img:hover,
+.clothes-gallery img:hover,
+.web-gallery img:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  background-color: #f1f1f1;
+  font-size: 1.1em;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+.tech-list,
+.features-list {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+}
+
+.tech-list li,
+.features-list li {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+}
