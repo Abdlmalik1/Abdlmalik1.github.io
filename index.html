@@ -2,277 +2,445 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abdulmalik Al-bohiri - ملف الأعمال</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/js/all.min.js"></script>
+  <title>Abdulmalik Al-bohiri - ملف الأعمال الاحترافي</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
 
-  <header>
-    <h1>Abdulmalik Al-bohiri</h1>
-    <p>Full Stack Developer – متخصص في تطوير الويب والتطبيقات</p>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-code"></i>
+        <span>Abdulmalik</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">الرئيسية</a></li>
+        <li><a href="#about" class="nav-link">عني</a></li>
+        <li><a href="#skills" class="nav-link">المهارات</a></li>
+        <li><a href="#projects" class="nav-link">المشاريع</a></li>
+        <li><a href="#contact" class="nav-link">التواصل</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header / Hero Section -->
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Abdulmalik Al-bohiri</h1>
+        <p class="hero-subtitle">Full Stack Developer</p>
+        <p class="hero-description">متخصص في تطوير الويب والتطبيقات | Flutter • ASP.NET • Python • AI • laravel  </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-briefcase"></i> شاهد أعمالي
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-envelope"></i> تواصل معي
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero-image.png" alt="واجهة التطبيق 1" class="profile-image">
+        <div class="hero-shape"></div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>نبذة عني</h2>
-    <p>
-      أنا مطور Full Stack أمتلك خبرة قوية في بناء وتطوير مواقع الويب باستخدام HTML, CSS, JavaScript, وPHP،
-      بالإضافة إلى تطوير تطبيقات Flutter الاحترافية المتصلة بـ APIs مبنية بتقنية ASP.NET.
-      كما أمتلك خبرة في الذكاء الاصطناعي باستخدام Python، وتمكنت من تنفيذ مشاريع تحليل بيانات وتصنيف الصور.
-      أتميز بفهم عميق للتعامل مع قواعد البيانات، سواء MySQL أو SQL Server.
-    </p>
-  </section>
-
-  <section>
-
-    <h2>🚀 Smart Inventory System - نظام الجرد الذكي بالذكاء الاصطناعي</h2>
-  
-    <p>
-      نظام الجرد الذكي هو مشروع متكامل لإدارة المخزون باستخدام تقنيات الذكاء الاصطناعي
-      ورؤية الحاسوب. يتيح النظام للمستخدم التقاط صورة للمنتجات أو رفعها من المعرض
-      ليتم تحليلها تلقائياً بواسطة نموذج <strong>YOLOv8</strong> للتعرف على المنتجات
-      وحساب الكميات بدقة عالية.
-    </p>
-  
-    <p>
-      يعتمد المشروع على بنية متكاملة تتكون من تطبيق <strong>Flutter</strong>،
-      وخدمة ذكاء اصطناعي مطورة باستخدام <strong>Python & Flask</strong>،
-      وواجهة <strong>ASP.NET Web API</strong> لمعالجة البيانات والتواصل بين الأنظمة،
-      بالإضافة إلى لوحة تحكم احترافية مطورة باستخدام <strong>Blazor</strong>
-      لإدارة المنتجات والمخزون والتقارير والمستخدمين.
-    </p>
-  
-    <h3>التقنيات المستخدمة</h3>
-  
-    <ul class="tech-list">
-      <li>Flutter & Dart</li>
-      <li>ASP.NET Web API</li>
-      <li>Blazor</li>
-      <li>SQL Server</li>
-      <li>Python</li>
-      <li>Flask</li>
-      <li>YOLOv8</li>
-      <li>Computer Vision</li>
-      <li>JWT Authentication</li>
-    </ul>
-  
-    <h3>أهم مميزات النظام</h3>
-  
-    <ul class="features-list">
-      <li>التعرف على المنتجات تلقائياً باستخدام الذكاء الاصطناعي.</li>
-      <li>حساب الكميات الموجودة داخل الصور بشكل آلي.</li>
-      <li>إدارة المخزون ومتابعة الكميات المتوفرة.</li>
-      <li>حفظ نتائج الجرد داخل قاعدة البيانات.</li>
-      <li>إدارة المستخدمين والصلاحيات.</li>
-      <li>توليد تقارير وإحصائيات للمخزون.</li>
-      <li>واجهة استخدام سهلة وحديثة.</li>
-      <li>ربط كامل بين التطبيق ولوحة التحكم وقاعدة البيانات.</li>
-    </ul>
-  
-    <h3>📱 واجهات تطبيق Flutter</h3>
-  
-    <p>
-      يتيح التطبيق للمستخدمين تنفيذ عمليات الجرد بسهولة من خلال الهاتف،
-      حيث يمكن التقاط الصور وتحليلها وعرض النتائج وإدارة التقارير والمخزون
-      من أي مكان وبواجهة استخدام حديثة وسريعة.
-    </p>
-  
-    <div class="gallery">
-      <img src="images/app1.jpg" alt="واجهة التطبيق 1">
-      <img src="images/app2.jpg" alt="واجهة التطبيق 2">
-      <img src="images/app3.jpg" alt="واجهة التطبيق 3">
-      <img src="images/app4.jpg" alt="واجهة التطبيق 4">
-      <img src="images/app5.jpg" alt="واجهة التطبيق 5">
-      <img src="images/app6.jpg" alt="واجهة التطبيق 6">
-      <img src="images/app7.jpg" alt="واجهة التطبيق 7">
-      <img src="images/app8.jpg" alt="واجهة التطبيق 8">
-      <img src="images/app9.jpg" alt="واجهة التطبيق 9">
-      <img src="images/app10.jpg" alt="واجهة التطبيق 10">
-      <img src="images/app11.jpg" alt="واجهة التطبيق 11">
-      <img src="images/app12.jpg" alt="واجهة التطبيق 12">
-    </div>
-  
-    <h3>🖥️ لوحة التحكم (Blazor Dashboard)</h3>
-  
-    <p>
-      تم تطوير لوحة تحكم ويب احترافية باستخدام Blazor لتوفير إدارة شاملة للنظام.
-      تسمح لوحة التحكم للمشرفين بإدارة المنتجات والمستخدمين ومتابعة عمليات الجرد
-      ومراقبة المخزون وعرض التقارير والإحصائيات بشكل مباشر.
-    </p>
-  
-    <ul class="features-list">
-      <li>إدارة المنتجات والأصناف.</li>
-      <li>إدارة المستخدمين والصلاحيات.</li>
-      <li>متابعة نتائج الجرد المخزنة.</li>
-      <li>عرض التقارير والإحصائيات.</li>
-      <li>البحث والتصفية داخل البيانات.</li>
-      <li>مراقبة مستويات المخزون.</li>
-      <li>عرض التنبيهات والإشعارات.</li>
-    </ul>
-  
-    <h3>صور لوحة التحكم</h3>
-  
-    <div class="web-gallery">
-      <img src="images/web1.png" alt="لوحة التحكم الرئيسية">
-      <img src="images/web2.png" alt="إدارة المنتجات">
-      <img src="images/web3.png" alt="إدارة المخزون">
-      <img src="images/web4.png" alt="التقارير">
-      <img src="images/web5.png" alt="إدارة المستخدمين">
-      <img src="images/web6.png" alt="الإحصائيات">
-    </div>
-  
-  </section>
-  <section>
-    <h2>تطبيق Flutter – Movies App</h2>
-  
-    <p>
-      تطبيق أفلام ومسلسلات تم تطويره باستخدام Flutter، يتيح للمستخدمين
-      استعراض الأفلام والمسلسلات الشائعة، مشاهدة تفاصيل العمل،
-      تقييم المحتوى، وإضافة العناصر إلى المفضلة.
-      يعتمد التطبيق على استهلاك API خارجي لجلب البيانات بشكل مباشر
-      مع واجهة مستخدم حديثة ومتجاوبة.
-    </p>
-  
-    <h3>التقنيات المستخدمة:</h3>
-    <ul class="tech-list">
-      <li>Flutter</li>
-      <li>Dart</li>
-      <li>REST API</li>
-      <li>HTTP Package</li>
-      <li>State Management</li>
-      <li>Responsive UI Design</li>
-    </ul>
-  
-    <h3>مميزات التطبيق:</h3>
-    <ul class="features-list">
-      <li>عرض أحدث الأفلام والمسلسلات.</li>
-      <li>إضافة الأعمال إلى المفضلة.</li>
-      <li>عرض أعلى الأعمال تقييماً.</li>
-      <li>صفحة تفاصيل كاملة لكل فيلم أو مسلسل.</li>
-      <li>واجهة عربية حديثة وسهلة الاستخدام.</li>
-      <li>تصميم متجاوب مع مختلف أحجام الشاشات.</li>
-    </ul>
-  
-    <h3>صور من التطبيق:</h3>
-  
-    <div class="gallery">
-      <img src="images/movie1.jpg" alt="Splash Screen">
-      <img src="images/movie2.jpg" alt="Home Screen">
-      <img src="images/movie3.jpg" alt="Top Rated">
-      <img src="images/movie4.jpg" alt="Movie Details">
-      <img src="images/movie5.jpg" alt="Login Screen">
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">👨‍💻</span>
+        نبذة عني
+      </h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            أنا مطور <strong>Full Stack</strong> متخصص في بناء وتطوير مواقع الويب والتطبيقات الاحترافية. 
+            أمتلك خبرة قوية في استخدام تقنيات متعددة مثل <strong>Flutter</strong> و<strong>ASP.NET</strong> و<strong>Python</strong> و<strong>الذكاء الاصطناعي</strong>.
+          </p>
+          <p>
+            تخصصي يشمل تطوير تطبيقات الجوال بـ Flutter، بناء APIs قوية باستخدام ASP.NET، 
+            تطوير مواقع الويب بـ HTML/CSS/JavaScript/PHP،laravel  وتطبيق حلول الذكاء الاصطناعي باستخدام Python.
+          </p>
+          <p>
+            أتميز بفهم عميق لقواعس البيانات (MySQL و SQL Server)، وأمتلك خبرة في معالجة البيانات وتحليلها وتصنيف الصور باستخدام تقنيات الـ Computer Vision.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <h3>20+</h3>
+            <p>مشروع مكتمل</p>
+          </div>
+          <div class="stat-card">
+            <h3>1+</h3>
+            <p>سنوات خبرة</p>
+          </div>
+          <div class="stat-card">
+            <h3>50+</h3>
+            <p>عميل راضي</p>
+          </div>
+          <div class="stat-card">
+            <h3>10+</h3>
+            <p>تقنية مختلفة</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>موقع شراء الملابس - HTML / CSS / PHP</h2>
-    <p>
-      موقع إلكتروني احترافي لعرض وشراء الملابس، يتميز بواجهة مستخدم جذابة وتجربة تسوّق سهلة، تم تطويره باستخدام HTML وCSS وPHP.
-    </p>
-
-    <h3>صور من الموقع:</h3>
-    <div class="clothes-gallery">
-      <img src="images/w1.png" alt="واجهة موقع الملابس 1">
-      <img src="images/w2.png" alt="واجهة موقع الملابس 2">
-      <img src="images/w3.png" alt="واجهة موقع الملابس 3">
-      <img src="images/w4.png" alt="واجهة موقع الملابس 4">
-      <img src="images/w5.png" alt="واجهة موقع الملابس 5">
-      <img src="images/w6.png" alt="واجهة موقع الملابس 6">
-      <img src="images/w7.png" alt="واجهة موقع الملابس 7">
-      <img src="images/w8.png" alt="واجهة موقع الملابس 8">
-    </div>
-  </section>
-  <section>
-    <h2>تطبيق Flutter – Cooking Recipes</h2>
-  
-    <p>
-      تطبيق وصفات طبخ احترافي تم تطويره باستخدام Flutter، يتيح للمستخدم
-      استعراض الوصفات الغذائية، البحث عن الأطباق، حفظ الوصفات في المفضلة،
-      وتخصيص إعدادات التطبيق مثل تغيير اللغة والوضع الداكن.
-      يعتمد التطبيق على Firebase Authentication لإدارة حسابات المستخدمين
-      مع واجهة مستخدم حديثة تدعم اللغتين العربية والإنجليزية.
-    </p>
-  
-    <h3>التقنيات المستخدمة:</h3>
-  
-    <ul class="tech-list">
-      <li>Flutter</li>
-      <li>Dart</li>
-      <li>Firebase Authentication</li>
-      <li>REST API</li>
-      <li>Localization (Arabic & English)</li>
-      <li>Dark Mode / Light Mode</li>
-      <li>Shared Preferences</li>
-    </ul>
-  
-    <h3>مميزات التطبيق:</h3>
-  
-    <ul class="features-list">
-      <li>تسجيل الدخول وإنشاء حساب.</li>
-      <li>البحث عن الوصفات بسهولة.</li>
-      <li>إضافة الوصفات إلى المفضلة.</li>
-      <li>صفحة ملف شخصي للمستخدم.</li>
-      <li>دعم الوضع الداكن والوضع الفاتح.</li>
-      <li>دعم اللغتين العربية والإنجليزية.</li>
-      <li>تصميم حديث ومتجاوب.</li>
-    </ul>
-  
-    <h3>صور من التطبيق:</h3>
-  
-    <div class="gallery">
-        <img src="images/n1.jpg" alt="Splash Screen">
-        <img src="images/n2.jpg" alt="Login Screen">
-        <img src="images/n3.jpg" alt="Favorites Screen">
-        <img src="images/n4.jpg" alt="Recipes Screen">
-        <img src="images/n5.jpg" alt="Favorites List">
-        <img src="images/n6.jpg" alt="Profile Screen">
-        <img src="images/n7.jpg" alt="Settings Screen">
-        <img src="images/n8.jpg" alt="Dark Mode">
-        <img src="images/n9.jpg" alt="Dark Home Screen">
-    </div>
-  </section>
-
-  <!-- ✅ إضافة التطبيق في الأخير -->
-  <section>
-    <h2>تطبيق Flutter – Fast Food</h2>
-    <p>
-      تطبيق <strong>Fast Food</strong> هو تطبيق مطعم متكامل يتيح للمستخدمين
-      استعراض قائمة الطعام، اختيار الوجبات، وإرسال الطلب بسهولة،
-      مع خدمة توصيل سريعة. التطبيق مرتبط بـ API وقاعدة بيانات
-      لإدارة الطلبات والمنتجات والمستخدمين.
-    </p>
-
-    <h3>صور من التطبيق:</h3>
-    <div class="gallery">
-      <img src="images/f1.jpg" alt="Fast Food 1">
-      <img src="images/f2.jpg" alt="Fast Food 2">
-      <img src="images/f3.jpg" alt="Fast Food 3">
-      <img src="images/f4.jpg" alt="Fast Food 4">
-      <img src="images/f5.jpg" alt="Fast Food 5">
-
-      <img src="images/f7.jpg" alt="Fast Food 7">
-  
-      <img src="images/f9.jpg" alt="Fast Food 9">
-      <img src="images/f10.jpg" alt="Fast Food 10">
-      <img src="images/f11.jpg" alt="Fast Food 11">
-      <img src="images/f12.jpg" alt="Fast Food 12">
-      <img src="images/f13.jpg" alt="Fast Food 13">
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">🛠️</span>
+        المهارات التقنية
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>تطوير التطبيقات</h3>
+          <div class="skill-list">
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">State Management</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>تطوير الويب</h3>
+          <div class="skill-list">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">PHP</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Backend & APIs</h3>
+          <div class="skill-list">
+            <span class="skill-tag">ASP.NET</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">JWT Auth</span>
+            <span class="skill-tag">Web Services</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>قواعد البيانات</h3>
+          <div class="skill-list">
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Database Design</span>
+            <span class="skill-tag">Optimization</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>الذكاء الاصطناعي</h3>
+          <div class="skill-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">YOLOv8</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Data Analysis</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>أدوات أخرى</h3>
+          <div class="skill-list">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Postman</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>📧 راسلني عبر البريد:
-      <a href="mailto:abdulmalikalbohiri@gmail.com">
-        abdulmalikalbohiri@gmail.com
+  <!-- Projects Section -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">🚀</span>
+        المشاريع المميزة
+      </h2>
+      
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="flutter">Flutter</button>
+        <button class="filter-btn" data-filter="web">الويب</button>
+        <button class="filter-btn" data-filter="ai">الذكاء الاصطناعي</button>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: Smart Inventory -->
+        <div class="project-card" data-category="ai" onclick="window.location.href='project-smart-inventory.html'" style="cursor: pointer;">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="images/app1.jpg" alt="واجهة التطبيق 1" class="gallery-image">
+              <img src="images/app2.jpg" alt="واجهة التطبيق 2" class="gallery-image" style="display:none;">
+              <img src="images/app3.jpg" alt="واجهة التطبيق 3" class="gallery-image" style="display:none;">
+              <img src="images/app4.jpg" alt="واجهة التطبيق 4" class="gallery-image" style="display:none;">
+            </div>
+            <button class="gallery-prev"><i class="fas fa-chevron-right"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentSlide(0, this)"></span>
+              <span class="dot" onclick="currentSlide(1, this)"></span>
+              <span class="dot" onclick="currentSlide(2, this)"></span>
+              <span class="dot" onclick="currentSlide(3, this)"></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>🚀 Smart Inventory System</h3>
+            <p class="project-category">نظام الجرد الذكي بالذكاء الاصطناعي</p>
+            <p class="project-description">
+              نظام متكامل لإدارة المخزون باستخدام YOLOv8 لتحليل الصور وحساب الكميات تلقائياً.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>Python</span>
+              <span>ASP.NET</span>
+              <span>Blazor</span>
+              <span>YOLOv8</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Movies App -->
+        <div class="project-card" data-category="flutter" onclick="window.location.href='project-movies.html'" style="cursor: pointer;">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="images/movie1.jpg" alt="Splash Screen" class="gallery-image">
+              <img src="images/movie2.jpg" alt="Home Screen" class="gallery-image" style="display:none;">
+              <img src="images/movie3.jpg" alt="Top Rated" class="gallery-image" style="display:none;">
+              <img src="images/movie4.jpg" alt="Movie Details" class="gallery-image" style="display:none;">
+              <img src="images/movie5.jpg" alt="Login Screen" class="gallery-image" style="display:none;">
+            </div>
+            <button class="gallery-prev"><i class="fas fa-chevron-right"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentSlide(0, this)"></span>
+              <span class="dot" onclick="currentSlide(1, this)"></span>
+              <span class="dot" onclick="currentSlide(2, this)"></span>
+              <span class="dot" onclick="currentSlide(3, this)"></span>
+              <span class="dot" onclick="currentSlide(4, this)"></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>🎬 Movies App</h3>
+            <p class="project-category">تطبيق أفلام ومسلسلات</p>
+            <p class="project-description">
+              تطبيق Flutter لعرض الأفلام والمسلسلات مع إمكانية البحث والتقييم والمفضلة.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>REST API</span>
+              <span>State Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Clothes Store -->
+        <div class="project-card" data-category="web" onclick="window.location.href='project-clothes.html'" style="cursor: pointer;">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="images/w1.png" alt="واجهة موقع الملابس 1" class="gallery-image">
+              <img src="images/w2.png" alt="واجهة موقع الملابس 2" class="gallery-image" style="display:none;">
+              <img src="images/w3.png" alt="واجهة موقع الملابس 3" class="gallery-image" style="display:none;">
+              <img src="images/w4.png" alt="واجهة موقع الملابس 4" class="gallery-image" style="display:none;">
+              <img src="images/w5.png" alt="واجهة موقع الملابس 5" class="gallery-image" style="display:none;">
+              <img src="images/w6.png" alt="واجهة موقع الملابس 6" class="gallery-image" style="display:none;">
+              <img src="images/w7.png" alt="واجهة موقع الملابس 7" class="gallery-image" style="display:none;">
+              <img src="images/w8.png" alt="واجهة موقع الملابس 8" class="gallery-image" style="display:none;">
+            </div>
+            <button class="gallery-prev"><i class="fas fa-chevron-right"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentSlide(0, this)"></span>
+              <span class="dot" onclick="currentSlide(1, this)"></span>
+              <span class="dot" onclick="currentSlide(2, this)"></span>
+              <span class="dot" onclick="currentSlide(3, this)"></span>
+              <span class="dot" onclick="currentSlide(4, this)"></span>
+              <span class="dot" onclick="currentSlide(5, this)"></span>
+              <span class="dot" onclick="currentSlide(6, this)"></span>
+              <span class="dot" onclick="currentSlide(7, this)"></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>👕 Clothes Store</h3>
+            <p class="project-category">موقع شراء الملابس</p>
+            <p class="project-description">
+              موقع إلكتروني احترافي لعرض وشراء الملابس مع واجهة مستخدم جذابة وتجربة تسوق سهلة.
+            </p>
+            <div class="project-tech">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>PHP</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Cooking Recipes -->
+        <div class="project-card" data-category="flutter" onclick="window.location.href='project-cooking.html'" style="cursor: pointer;">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="images/n1.jpg" alt="Splash Screen" class="gallery-image">
+              <img src="images/n2.jpg" alt="Login Screen" class="gallery-image" style="display:none;">
+              <img src="images/n3.jpg" alt="Favorites Screen" class="gallery-image" style="display:none;">
+              <img src="images/n4.jpg" alt="Recipes Screen" class="gallery-image" style="display:none;">
+              <img src="images/n5.jpg" alt="Favorites List" class="gallery-image" style="display:none;">
+              <img src="images/n6.jpg" alt="Profile Screen" class="gallery-image" style="display:none;">
+              <img src="images/n7.jpg" alt="Settings Screen" class="gallery-image" style="display:none;">
+              <img src="images/n8.jpg" alt="Dark Mode" class="gallery-image" style="display:none;">
+              <img src="images/n9.jpg" alt="Dark Home Screen" class="gallery-image" style="display:none;">
+            </div>
+            <button class="gallery-prev"><i class="fas fa-chevron-right"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentSlide(0, this)"></span>
+              <span class="dot" onclick="currentSlide(1, this)"></span>
+              <span class="dot" onclick="currentSlide(2, this)"></span>
+              <span class="dot" onclick="currentSlide(3, this)"></span>
+              <span class="dot" onclick="currentSlide(4, this)"></span>
+              <span class="dot" onclick="currentSlide(5, this)"></span>
+              <span class="dot" onclick="currentSlide(6, this)"></span>
+              <span class="dot" onclick="currentSlide(7, this)"></span>
+              <span class="dot" onclick="currentSlide(8, this)"></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>👨‍🍳 Cooking Recipes</h3>
+            <p class="project-category">تطبيق وصفات الطبخ</p>
+            <p class="project-description">
+              تطبيق Flutter لاستعراض الوصفات الغذائية مع دعم اللغتين العربية والإنجليزية والوضع الداكن.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>Localization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Fast Food App -->
+        <div class="project-card" data-category="flutter" onclick="window.location.href='project-fastfood.html'" style="cursor: pointer;">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="images/f1.jpg" alt="Fast Food 1" class="gallery-image">
+              <img src="images/f2.jpg" alt="Fast Food 2" class="gallery-image" style="display:none;">
+              <img src="images/f3.jpg" alt="Fast Food 3" class="gallery-image" style="display:none;">
+              <img src="images/f4.jpg" alt="Fast Food 4" class="gallery-image" style="display:none;">
+              <img src="images/f5.jpg" alt="Fast Food 5" class="gallery-image" style="display:none;">
+              <img src="images/f7.jpg" alt="Fast Food 7" class="gallery-image" style="display:none;">
+              <img src="images/f9.jpg" alt="Fast Food 9" class="gallery-image" style="display:none;">
+              <img src="images/f10.jpg" alt="Fast Food 10" class="gallery-image" style="display:none;">
+              <img src="images/f11.jpg" alt="Fast Food 11" class="gallery-image" style="display:none;">
+              <img src="images/f12.jpg" alt="Fast Food 12" class="gallery-image" style="display:none;">
+              <img src="images/f13.jpg" alt="Fast Food 13" class="gallery-image" style="display:none;">
+            </div>
+            <button class="gallery-prev"><i class="fas fa-chevron-right"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentSlide(0, this)"></span>
+              <span class="dot" onclick="currentSlide(1, this)"></span>
+              <span class="dot" onclick="currentSlide(2, this)"></span>
+              <span class="dot" onclick="currentSlide(3, this)"></span>
+              <span class="dot" onclick="currentSlide(4, this)"></span>
+              <span class="dot" onclick="currentSlide(5, this)"></span>
+              <span class="dot" onclick="currentSlide(6, this)"></span>
+              <span class="dot" onclick="currentSlide(7, this)"></span>
+              <span class="dot" onclick="currentSlide(8, this)"></span>
+              <span class="dot" onclick="currentSlide(9, this)"></span>
+              <span class="dot" onclick="currentSlide(10, this)"></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>🍔 Fast Food App</h3>
+            <p class="project-category">تطبيق مطعم متكامل</p>
+            <p class="project-description">
+              تطبيق Flutter لاستعراض قائمة الطعام واختيار الوجبات وإرسال الطلبات مع خدمة توصيل سريعة.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>API Integration</span>
+              <span>Database</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+  
+  <div class="footer-content">
+  
+    <h3>عبد الملك البحيري</h3>
+  
+    <p class="footer-description">
+      مطور تطبيقات Flutter ومطور ASP.NET API
+      ومهتم بالذكاء الاصطناعي والرؤية الحاسوبية.
+    </p>
+    <h2>  للتواصل  </h2>
+  
+    <div class="footer-social">
+  
+      <a href="https://github.com/Abdlmalik1"
+         target="_blank"
+         title="GitHub">
+        <i class="fab fa-github"></i>
       </a>
-    </p>
-    <p>📱 تواصل عبر الواتساب:
-      <a href="https://wa.me/967781438454" target="_blank">
-        +967781438454
+  
+      <a href="https://wa.me/967781438454"
+         target="_blank"
+         title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
       </a>
+  
+      <a href="mailto:abdulmalikalbohiri@gmail.com"
+         title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+  
+    </div>
+  
+    <div class="footer-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">نبذة عني</a>
+      <a href="#skills">المهارات</a>
+      <a href="#projects">المشاريع</a>
+    </div>
+  
+    <hr>
+  
+    <p class="copyright">
+      © 2025 Abdulmalik Al-Bohiri - جميع الحقوق محفوظة
     </p>
+  
+  </div>
+  
+    </div>
   </footer>
+    
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
+  <script src="script.js"></script>
 </body>
 </html>

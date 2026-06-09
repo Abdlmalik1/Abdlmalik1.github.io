@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies App - تفاصيل المشروع</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/js/all.min.js"></script>
+  <style>
+    .project-detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #5E4BFA 100%);
+      color: white;
+      padding: 60px 20px;
+      margin-top: 70px;
+    }
+
+    .project-detail-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .project-detail-header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .project-detail-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* ===== PROJECT INFO SECTION ===== */
+    .project-top-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+      align-items: start;
+    }
+
+    .project-info-detail {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-info-detail h2 {
+      color: #5E4BFA;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .project-info-detail p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1.05em;
+    }
+
+    .tech-stack {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 2px solid #eee;
+    }
+
+    .tech-stack h3 {
+      color: #5E4BFA;
+      margin-bottom: 15px;
+    }
+
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-item {
+      background: linear-gradient(135deg, #5E4BFA, #4b3bd2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+
+    /* ===== MASONRY GALLERY ===== */
+    .gallery-section {
+      margin-bottom: 60px;
+    }
+
+    .gallery-section-title {
+      text-align: center;
+      font-size: 1.6em;
+      color: #5E4BFA;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .gallery-section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #5E4BFA, #a78bfa);
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    .masonry-grid {
+      columns: 3;
+      column-gap: 16px;
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 4px 18px rgba(94, 75, 250, 0.10);
+      transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.35s ease;
+    }
+
+    .masonry-item:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(94, 75, 250, 0.25);
+      z-index: 2;
+    }
+
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .masonry-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .masonry-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(94, 75, 250, 0.75) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 18px;
+    }
+
+    .masonry-item:hover .masonry-overlay {
+      opacity: 1;
+    }
+
+    .masonry-overlay span {
+      color: white;
+      font-size: 0.95em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(10, 8, 30, 0.92);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      animation: fadeInLightbox 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    @keyframes fadeInLightbox {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      animation: zoomInImg 0.35s cubic-bezier(.25,.8,.25,1);
+    }
+
+    @keyframes zoomInImg {
+      from { transform: scale(0.8); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .lightbox-inner img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #5E4BFA;
+      color: white;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: #4b3bd2;
+      transform: scale(1.1) rotate(90deg);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(94, 75, 250, 0.85);
+      color: white;
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: #5E4BFA;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-prev { right: calc(100% + 16px); }
+    .lightbox-next { left: calc(100% + 16px); }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: -36px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9em;
+    }
+
+    /* ===== DESCRIPTION & FEATURES ===== */
+    .desc-subtitle {
+      color: #5E4BFA;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .desc-subtitle--spaced {
+      margin-top: 40px;
+    }
+
+    .project-description-full {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 60px;
+    }
+
+    .project-description-full h2 {
+      color: #5E4BFA;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .project-description-full p {
+      color: #333;
+      line-height: 1.9;
+      margin-bottom: 15px;
+      font-size: 1.05em;
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .feature-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-right: 4px solid #5E4BFA;
+    }
+
+    .feature-item h4 {
+      color: #5E4BFA;
+      margin-bottom: 10px;
+    }
+
+    .feature-item p {
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 25px;
+      background: #5E4BFA;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .back-button:hover {
+      background: #4b3bd2;
+      transform: translateX(-5px);
+    }
+
+    @media (max-width: 992px) {
+      .project-top-section {
+        grid-template-columns: 1fr;
+      }
+      .masonry-grid {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .masonry-grid {
+        columns: 1;
+      }
+      .project-detail-header h1 {
+        font-size: 1.8em;
+      }
+      .lightbox-prev { right: auto; left: 8px; top: auto; bottom: 16px; transform: none; }
+      .lightbox-next { left: auto; right: 8px; top: auto; bottom: 16px; transform: none; }
+      .lightbox-nav:hover { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-code"></i>
+        <span>Abdulmalik</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html#home" class="nav-link">الرئيسية</a></li>
+        <li><a href="index.html#projects" class="nav-link">المشاريع</a></li>
+        <li><a href="index.html#contact" class="nav-link">التواصل</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Header -->
+  <header class="project-detail-header">
+    <div class="container">
+      <h1>🎬 Movies App</h1>
+      <p>تطبيق أفلام ومسلسلات</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="project-detail-container">
+    <a href="index.html#projects" class="back-button">
+      <i class="fas fa-arrow-right"></i>
+      العودة للمشاريع
+    </a>
+
+    <!-- Top: Info Card + Featured Image -->
+    <div class="project-top-section">
+      <div class="project-info-detail">
+        <h2>نبذة عن المشروع</h2>
+        <p>
+          تطبيق أفلام ومسلسلات تم تطويره باستخدام Flutter، يتيح للمستخدمين استعراض الأفلام والمسلسلات الشائعة، مشاهدة تفاصيل العمل، تقييم المحتوى، وإضافة العناصر إلى المفضلة. يعتمد التطبيق على استهلاك API خارجي لجلب البيانات بشكل مباشر مع واجهة مستخدم حديثة ومتجاوبة.
+        </p>
+        <div class="tech-stack">
+          <h3>التقنيات المستخدمة</h3>
+          <div class="tech-items">
+            <span class="tech-item">Flutter</span>
+            <span class="tech-item">Dart</span>
+            <span class="tech-item">REST API</span>
+            <span class="tech-item">HTTP Package</span>
+            <span class="tech-item">State Management</span>
+            <span class="tech-item">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured image -->
+      <div class="masonry-item" onclick="openLightbox(0)">
+        <img src="images/movie1.jpg" alt="Movies App - صورة رئيسية">
+        <div class="masonry-overlay"><span><i class="fas fa-search-plus"></i> عرض كبير</span></div>
+      </div>
+    </div>
+
+    <!-- Masonry Gallery Section -->
+    <div class="gallery-section">
+      <h2 class="gallery-section-title">معرض الصور</h2>
+      <div class="masonry-grid" id="masonryGrid">
+        <div class="masonry-item" onclick="openLightbox(0)">
+          <img src="images/movie1.jpg" alt="صورة 1" loading="lazy">
+          <div class="masonry-overlay"><span><i class="fas fa-search-plus"></i> صورة 1</span></div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(1)">
+          <img src="images/movie2.jpg" alt="صورة 2" loading="lazy">
+          <div class="masonry-overlay"><span><i class="fas fa-search-plus"></i> صورة 2</span></div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(2)">
+          <img src="images/movie3.jpg" alt="صورة 3" loading="lazy">
+          <div class="masonry-overlay"><span><i class="fas fa-search-plus"></i> صورة 3</span></div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(3)">
+          <img src="images/movie4.jpg" alt="صورة 4" loading="lazy">
+          <div class="masonry-overlay"><span><i class="fas fa-search-plus"></i> صورة 4</span></div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(4)">
+          <img src="images/movie5.jpg" alt="صورة 5" loading="lazy">
+          <div class="masonry-overlay"><span><i class="fas fa-search-plus"></i> صورة 5</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
+        <img id="lightboxImg" src="" alt="صورة موسّعة">
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+      </div>
+    </div>
+
+    <!-- Full Description -->
+    <div class="project-description-full">
+      <h2>التفاصيل الكاملة</h2>
+      <p>
+        تطبيق Movies هو تطبيق Flutter متقدم يوفر تجربة مستخدم احترافية لاستعراض الأفلام والمسلسلات. يتميز التطبيق بواجهة مستخدم حديثة وسهلة الاستخدام، مع دعم كامل للغة العربية والإنجليزية.
+      </p>
+
+      <h3 class="desc-subtitle">أهم المميزات</h3>
+      <div class="features-list">
+        <div class="feature-item">
+          <h4><i class="fas fa-film"></i> عرض الأفلام والمسلسلات</h4>
+          <p>عرض أحدث الأفلام والمسلسلات مع صور عالية الجودة</p>
+        </div>
+        <div class="feature-item">
+          <h4><i class="fas fa-star"></i> التقييمات</h4>
+          <p>عرض تقييمات الأفلام والمسلسلات من المستخدمين</p>
+        </div>
+        <div class="feature-item">
+          <h4><i class="fas fa-heart"></i> المفضلة</h4>
+          <p>إضافة الأعمال المفضلة وحفظها للعودة إليها لاحقاً</p>
+        </div>
+        <div class="feature-item">
+          <h4><i class="fas fa-search"></i> البحث المتقدم</h4>
+          <p>البحث عن الأفلام والمسلسلات بسهولة وسرعة</p>
+        </div>
+        <div class="feature-item">
+          <h4><i class="fas fa-info-circle"></i> التفاصيل الكاملة</h4>
+          <p>عرض معلومات شاملة عن كل فيلم أو مسلسل</p>
+        </div>
+        <div class="feature-item">
+          <h4><i class="fas fa-mobile-alt"></i> تصميم متجاوب</h4>
+          <p>يعمل بشكل مثالي على جميع أحجام الشاشات</p>
+        </div>
+      </div>
+
+      <h3 class="desc-subtitle desc-subtitle--spaced">الشاشات الرئيسية</h3>
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>🏠 الشاشة الرئيسية</h4>
+          <p>عرض أحدث الأفلام والمسلسلات والتوصيات</p>
+        </div>
+        <div class="feature-item">
+          <h4>⭐ الأعلى تقييماً</h4>
+          <p>عرض الأفلام والمسلسلات الأعلى تقييماً</p>
+        </div>
+        <div class="feature-item">
+          <h4>❤️ المفضلة</h4>
+          <p>عرض قائمة الأفلام والمسلسلات المفضلة</p>
+        </div>
+        <div class="feature-item">
+          <h4>🔍 البحث</h4>
+          <p>البحث عن الأفلام والمسلسلات المطلوبة</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Abdulmalik Al-bohiri. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== LIGHTBOX LOGIC =====
+    const galleryImages = [
+      'images/movie1.jpg', 'images/movie2.jpg', 'images/movie3.jpg',
+      'images/movie4.jpg', 'images/movie5.jpg'
+    ];
+    let currentLightboxIndex = 0;
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = galleryImages[index];
+      img.alt = 'صورة ' + (index + 1);
+      document.getElementById('lightboxCounter').textContent = (index + 1) + ' / ' + galleryImages.length;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBg(e) {
+      if (e.target === document.getElementById('lightbox')) closeLightbox();
+    }
+
+    function navigateLightbox(dir) {
+      currentLightboxIndex = (currentLightboxIndex + dir + galleryImages.length) % galleryImages.length;
+      const img = document.getElementById('lightboxImg');
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = galleryImages[currentLightboxIndex];
+        img.alt = 'صورة ' + (currentLightboxIndex + 1);
+        document.getElementById('lightboxCounter').textContent = (currentLightboxIndex + 1) + ' / ' + galleryImages.length;
+        img.style.opacity = 1;
+      }, 150);
+    }
+
+    document.getElementById('lightboxImg').style.transition = 'opacity 0.15s ease';
+
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') navigateLightbox(-1);
+      if (e.key === 'ArrowLeft')  navigateLightbox(1);
+    });
+  </script>
+</body>
+</html>
