@@ -745,6 +745,17 @@
   
     .nav-menu {
       display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: var(--card-bg);
+      flex-direction: column;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      border-top: 1px solid var(--border);
     }
   
     .section-title {
@@ -760,7 +771,15 @@
     }
   
     .hero-image {
-      display: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .profile-image {
+      width: 260px;
+      height: 260px;
+      border-width: 5px;
     }
   
     .about-content {
@@ -784,7 +803,7 @@
     }
   
     .section {
-      padding: 50px 20px;
+      padding: 40px 15px;
     }
   
     .scroll-to-top {
@@ -802,6 +821,12 @@
   
     .hero-subtitle {
       font-size: 1.2em;
+    }
+    
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-width: 4px;
     }
   
     .section-title {
